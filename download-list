@@ -1,0 +1,1 @@
+youtube-dl -f bestvideo+bestaudio --recode-video mp4 -o  "%(channel)s - %(playlist)s - %(playlist_index)03d - %(title)s.%(ext)s" "$@"
