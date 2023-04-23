@@ -9,7 +9,7 @@ has additional features and is actively maintained/updated.
 Additionally, if you want to add more flags/options when alling any of the
 scripts, you can do it like the following (assuming the list has say 100 videos):
 #+begin_src shell
-donwload-list https://some.awesome.list.com --playlist-start 53 --playlist-end 60
+download-list https://some.awesome.list.com --playlist-start 53 --playlist-end 60
 #+end_src
 
 And so on... Have fun!
