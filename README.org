@@ -1,0 +1,9 @@
+#+title: Readme
+
+These scripts can be placed or linked (i.e. ln -s download-video
+/usr/local/bin/download-video) to one of your PATH directories.
+
+It works and was tested with the fork of [[https://github.com/ytdl-org/youtube-dl][youtube-dl]] called [[https://github.com/yt-dlp/yt-dlp][yt-dlp]]. The latter
+has additional features and is actively maintained/updated.
+
+Have fun!
