@@ -6,8 +6,8 @@ These scripts can be placed or linked (i.e. ln -s download-video
 It works and was tested with the fork of [[https://github.com/ytdl-org/youtube-dl][youtube-dl]] called [[https://github.com/yt-dlp/yt-dlp][yt-dlp]]. The latter
 has additional features and is actively maintained/updated.
 
-Additionally, if you want to add more flags/options when alling any of the
-scripts, you can do it like the following (assuming the list has say 100 videos):
+Additionally, if you want to add more flags/options when calling any of the
+scripts, you can do it like the following (assuming the list has say 60+ videos):
 #+begin_src shell
 download-list https://some.awesome.list.com --playlist-start 53 --playlist-end 60
 #+end_src
