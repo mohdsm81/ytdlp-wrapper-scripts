@@ -1,1 +1,1 @@
-ffmpeg -c:v h264_nvenc -rc constqp -qp 28 -i $1 $2
+ffmpeg -hwaccel cuda -rc constqp -qp 28 -i $1 $2
