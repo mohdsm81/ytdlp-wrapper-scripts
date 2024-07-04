@@ -14,7 +14,7 @@ download-list https://some.awesome.list.com --playlist-start 53 --playlist-end 6
 
 Another way to specify items exolicitly to download from a playlist is the following (assuming it has 31 items or more):
 #+begin_src shell
-download-list https://some.awesome.list.com --playlist-start 53 --playlist-items 31
+download-list https://some.awesome.list.com --playlist-items 31
 #+end_src
 
 And so on... Have fun!
