@@ -12,4 +12,9 @@ scripts, you can do it like the following (assuming the list has say 60+ videos)
 download-list https://some.awesome.list.com --playlist-start 53 --playlist-end 60
 #+end_src
 
+Another way to specify items exolicitly to download from a playlist is the following (assuming it has 31 items or more):
+#+begin_src shell
+download-list https://some.awesome.list.com --playlist-start 53 --playlist-items 31
+#+end_src
+
 And so on... Have fun!
