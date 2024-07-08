@@ -1,4 +1,4 @@
-youtube-dl \
+/usr/local/bin/youtube-dl \
 -f bestaudio \
 -x --audio-format mp3 \
 -o "%(channel)s - %(title)s.%(ext)s" "$@" \

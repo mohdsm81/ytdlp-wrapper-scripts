@@ -1,6 +1,6 @@
 # comment the above line and uncomment the next line to enable nvidia hw transcoding
 #youtube-dl -f bestvideo+bestaudio --recode-video mp4  -o  "%(channel)s - %(playlist)s - %(playlist_index)03d - %(title)s.%(ext)s" --postprocessor-args 'ffmpeg:-hwaccel cuda' "$@"
-youtube-dl \
+/usr/local/bin/youtube-dl \
 -f bestvideo+bestaudio \
 --recode-video mp4 \
 -o  "%(channel)s - %(playlist)s - %(playlist_index)03d - %(title)s.%(ext)s" "$@" \
