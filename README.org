@@ -39,7 +39,7 @@ files.
 
 This is the stub (fill in your specific info between the pair of << and >>):
 #+begin_src shell
- * * * * * /usr/bin/flock -w 0 /var/lock/yt-dlp/download-list.lock cd <<destination-folder>> && download-list <<my-unlisted-list-url>>
+ * * * * * /usr/bin/flock -w 0 /var/lock/yt-dlp/download-list.lock cd <<destination-folder>> && /usr/local/bin/download-list <<my-unlisted-list-url>>
 #+end_src
 
 I hope this helps!
