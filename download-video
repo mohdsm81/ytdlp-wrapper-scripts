@@ -8,4 +8,5 @@ youtube-dl \
 --retry-sleep exp=1:2 \
 --fragment-retries 20 \
 --file-access-retries 3 \
---sponsorblock-remove "all"
+--sponsorblock-remove "all" \
+--concurrent-fragments $(nproc)
