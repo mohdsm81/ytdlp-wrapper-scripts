@@ -22,10 +22,24 @@ And so on... Have fun!
 * Scheduling tips and streamlining
 Create list on youtube/rumble with the visibility set to "unlisted" (which is not private nore public but any one with a link can access it). Instead of adding videos to the "Watch Later" list, add it to this unlisted list. This way you don't need any authentication, and no one knows about it. 
 
-Now, on your local machine, on which these videos are to be downloaded, you can schedule a task to invoke the `cd <<destination-folder>> && download-list <<my-unlisted-list-url>>` in crontab to run every minute or what have you. Once you add a video to that list, within a max of 1 minute (in my case) it will start downloading it.
+Now, on your local machine, on which these videos are to be downloaded, you can schedule a task to invoke the ~cd <<destination-folder>> && download-list <<my-unlisted-list-url>>~ in crontab to run every minute or what have you. Once you add a video to that list, within a max of 1 minute (in my case) it will start downloading it.
 
-So, you only need to add videos to the list, and it gets downloaded. This script won't take a lot of CPU or redownload what has been. This is because it keeps track of what has been downloaded in the local folder to that <<destination-folder>>/downloaded.txt list of hashes.
+So, you only need to add videos to the list, and it gets downloaded. This script won't take a lot of CPU or redownload what has been. This is because it keeps track of what has been downloaded in the local folder to that ~<<destination-folder>>/downloaded.txt~ list of hashes.
 
 * Caveat
 
-You will need to delete the files from the folder manually. Maybe yt-dlp has an option to remove files not in the list any more, but I don't want to use it... because once the videos are downloaded, I want to empty the list, and add few more videos to be downloaded, but that doesn't mean I want my videos (potentially unwatched yet) be deleted from my folder.
+You will need to delete the files from the folder manually. Maybe ~yt-dlp~ has an option to remove files not in the list any more, but I don't want to use it... because once the videos are downloaded, I want to empty the list, and add few more videos to be downloaded, but that doesn't mean I want my videos (potentially unwatched yet) be deleted from my folder.
+
+* My final setup stub
+
+Following [[https://www.pankajtanwar.in/blog/prevent-duplicate-cron-job-running][this great guide]] about how to use ~flock~, I could use the scripts on
+a cronjob that runs every minute without launching infinite amount of processes
+that would end up messing up the download folder and potentially corrupting
+files.
+
+This is the stub (fill in your specific info between the pair of << and >>):
+#+begin_src shell
+ * * * * * /usr/bin/flock -w 0 /var/lock/yt-dlp/download-list.lock cd <<destination-folder>> && download-list <<my-unlisted-list-url>>
+#+end_src
+
+I hope this helps!
