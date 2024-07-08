@@ -10,4 +10,5 @@ youtube-dl \
 --fragment-retries 20 \
 --file-access-retries 3 \
 --sponsorblock-remove "all" \
---concurrent-fragments $(nproc)
+--concurrent-fragments $(nproc) \
+--no-check-certificate
