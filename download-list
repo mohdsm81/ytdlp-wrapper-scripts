@@ -1,3 +1,12 @@
-youtube-dl -f bestvideo+bestaudio --recode-video mp4 -o  "%(channel)s - %(playlist)s - %(playlist_index)03d - %(title)s.%(ext)s" "$@" --download-archive downloaded.txt
 # comment the above line and uncomment the next line to enable nvidia hw transcoding
 #youtube-dl -f bestvideo+bestaudio --recode-video mp4  -o  "%(channel)s - %(playlist)s - %(playlist_index)03d - %(title)s.%(ext)s" --postprocessor-args 'ffmpeg:-hwaccel cuda' "$@"
+youtube-dl \
+-f bestvideo+bestaudio \
+--recode-video mp4 \
+-o  "%(channel)s - %(playlist)s - %(playlist_index)03d - %(title)s.%(ext)s" "$@" \
+--download-archive downloaded.txt \
+--retries 20 \
+--retry-sleep exp=1:2 \
+--fragment-retries 20 \
+--file-access-retries 3 \
+--sponsorblock-remove "all"

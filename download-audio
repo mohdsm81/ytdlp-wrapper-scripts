@@ -1,1 +1,10 @@
-youtube-dl -f bestaudio -x --audio-format mp3 -o "%(channel)s - %(title)s.%(ext)s" "$@" --download-archive downloaded.txt
+youtube-dl \
+-f bestaudio \
+-x --audio-format mp3 \
+-o "%(channel)s - %(title)s.%(ext)s" "$@" \
+--download-archive downloaded.txt \
+--retries 20 \
+--retry-sleep exp=1:2 \
+--fragment-retries 20 \
+--file-access-retries 3 \
+--sponsorblock-remove "all"
