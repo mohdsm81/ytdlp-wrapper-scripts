@@ -37,9 +37,12 @@ a cronjob that runs every minute without launching infinite amount of processes
 that would end up messing up the download folder and potentially corrupting
 files.
 
-This is the stub (fill in your specific info between the pair of << and >>):
+This is the stub (fill in your specific info between the pair of << and >> and
+remove these angle brackets):
 #+begin_src shell
- * * * * * /usr/bin/flock -w 0 /var/lock/yt-dlp/download-list.lock cd <<destination-folder>> && /usr/local/bin/download-list <<my-unlisted-list-url>>
+ ,* * * * * /usr/bin/flock -w 0 /var/lock/yt-dlp/download-list.lock cd <<destination-folder>> && \
+     /usr/local/bin/download-list <<my-unlisted-list-url>> \
+                                  > /var/log/download-list.log 2>&1
 #+end_src
 
 I hope this helps!
