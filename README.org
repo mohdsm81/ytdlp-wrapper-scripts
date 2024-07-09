@@ -41,7 +41,7 @@ This is the stub (fill in your specific info between the pair of << and >> and
 remove these angle brackets):
 #+begin_src shell
  ,* * * * * /usr/bin/flock -w 0 /var/lock/yt-dlp/download-list.lock cd <<destination-folder>> && \
-     /usr/local/bin/download-list <<my-unlisted-list-url>> \
+     /usr/local/bin/download-list-auto <<my-unlisted-list-url>> \
                                   > /var/log/download-list.log 2>&1
 #+end_src
 
