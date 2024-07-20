@@ -1,6 +1,5 @@
 # comment the above line and uncomment the next line to enable nvidia hw transcoding
 #youtube-dl -f bestvideo+bestaudio --recode-video mp4 -o "%(channel)s - %(title)s.%(ext)s" --postprocessor-args 'ffmpeg:-hwaccel cuda' "$@"
-# --write-thumbnail \
 /usr/local/bin/yt-dlp \
 -f bestvideo+bestaudio \
 --recode-video mp4 -o  "%(channel)s - %(title)s - UPLOADED ON %(upload_date>%Y-%m-%d)s.%(ext)s" "$@" \
@@ -14,4 +13,5 @@
 --no-check-certificate \
 --add-metadata \
 --write-description \
+--write-thumbnail \
 --embed-thumbnail
