@@ -1,0 +1,4 @@
+/usr/local/bin/yt-dlp \
+--embed-thumbnail \
+--write-thumbnail \
+--write-description
