@@ -1,4 +1,14 @@
 /usr/local/bin/yt-dlp \
---embed-thumbnail \
+--recode-video mp4 -o  "%(channel)s - %(title)s - UPLOADED ON %(upload_date>%Y-%m-%d)s.%(ext)s" "$@" \
+--download-archive downloaded.txt \
+--retries 20 \
+--retry-sleep exp=1:2 \
+--fragment-retries 20 \
+--file-access-retries 3 \
+--sponsorblock-remove "all" \
+--concurrent-fragments $(nproc) \
+--no-check-certificate \
+--add-metadata \
+--write-description \
 --write-thumbnail \
---write-description
+--embed-thumbnail
