@@ -39,6 +39,6 @@ do
         # echo *$folder*.*
         # This one is erroneous (tries to move the folder inside of itself)
         # $ (mv *$folder*.* $folder)
-        find . -mindepth 1 -maxdepth 1 -name "*$folder*.*" -a -not -name "$folder" -exec mv -t "$folder" {} +
+        find . -mindepth 1 -maxdepth 1 -name "*- $folder -*.*" -a -not -name "$folder" -exec mv -t "$folder" {} +
     fi
 done
