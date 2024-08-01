@@ -65,3 +65,16 @@ Now, the root folder will contain all downloaded files in a flat structured mann
 
 * Not Tested Scripts Yet
 1. =yank.channel.sh=
+* Developer notes
+These notes are intended for those who want to modify the scripts, improve them, or add error handling, ... etc.
+
+** yt-dlp error codes
+
+Taken from [[https://github.com/yt-dlp/yt-dlp/issues/4262][this issue/post]]:
+#+begin_src bash
+  0 = Everything is successful
+100 = yt-dlp must restart for update to complete
+101 = Download cancelled by --max-downloads etc
+  2 = Error in user-provided options
+  1 = Any other error
+#+end_src
