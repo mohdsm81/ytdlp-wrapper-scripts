@@ -52,3 +52,13 @@ different index in the playlist, which leads to duplication. Now I removed the
 index and playlist name from the auto version of the list to avoid this confusion.
 
 I hope this helps!
+
+* Additional scripts for channel-wide downloads
+I added a =do.organize.sh= script so that once you use the =download-list= on a whole channel, i.e. downloading the entire playlists folder for example, it will download all playlists into one root folder. That is the folder where you invoked the script.
+
+Now, the root folder will contain all downloaded files in a flat structured manner. You can then invoke the =do.organize.sh= script in the root folder. What this script does is:
+1. iterate over all files and extract the playlists names
+2. create folders for each playlist
+3. move all files belonging to each playlist to its appropriate folder.
+
+*NOTE*: it will create one more folder, named after the channel itself, you will only see the =*.description= file in it. That is fine, that won't bite but it will show as an empty folder with a description in your media server (Jellyfin in my case). You can pretend it isn't there, even if it annoys you (and me).
