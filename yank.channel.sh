@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # download all playlists in the channel
 ./download-list "$@"
