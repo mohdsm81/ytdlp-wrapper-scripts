@@ -62,3 +62,6 @@ Now, the root folder will contain all downloaded files in a flat structured mann
 3. move all files belonging to each playlist to its appropriate folder.
 
 *NOTE*: it will create one more folder, named after the channel itself, you will only see the =*.description= file in it. That is fine, that won't bite but it will show as an empty folder with a description in your media server (Jellyfin in my case). You can pretend it isn't there, even if it annoys you (and me).
+
+* Not Tested Scripts Yet
+1. =yank.channel.sh=
