@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # comment the above line and uncomment the next line to enable nvidia hw transcoding
 #youtube-dl -f bestvideo+bestaudio --recode-video mp4 -o "%(channel)s - %(title)s.%(ext)s" --postprocessor-args 'ffmpeg:-hwaccel cuda' "$@"
 /usr/local/bin/yt-dlp \

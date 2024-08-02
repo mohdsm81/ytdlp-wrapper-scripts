@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 /usr/local/bin/yt-dlp \
 -f bestaudio \
 -x --audio-format mp3 \
