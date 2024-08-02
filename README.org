@@ -60,8 +60,9 @@ Now, the root folder will contain all downloaded files in a flat structured mann
 1. iterate over all files and extract the playlists names
 2. create folders for each playlist
 3. move all files belonging to each playlist to its appropriate folder.
+4. move all folders with their content, and the downloaded.txt to the created channel folder.
 
-*NOTE*: it will create one more folder, named after the channel itself, you will only see the =*.description= file in it. That is fine, that won't bite but it will show as an empty folder with a description in your media server (Jellyfin in my case). You can pretend it isn't there, even if it annoys you (and me).
+*NOTE:* When trying to update a list, in order to avoid trying to download all downloaded files, you need to use =--download-archive ../downloaded.txt= (i.e. the one residing in the channel's root folder) while invoking the =download-list= script from within each playlist folder. Why? because the downloaded.txt contains all playlists' files that has been downloaded and need to be updated with newly downloaded files.
 
 * Not Tested Scripts Yet
 1. =yank.channel.sh=
