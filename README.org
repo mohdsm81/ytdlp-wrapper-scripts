@@ -65,7 +65,7 @@ Now, the root folder will contain all downloaded files in a flat structured mann
 *NOTE:* When trying to update a list, in order to avoid trying to download all downloaded files, you need to use =--download-archive ../downloaded.txt= (i.e. the one residing in the channel's root folder) while invoking the =download-list= script from within each playlist folder. Why? because the downloaded.txt contains all playlists' files that has been downloaded and need to be updated with newly downloaded files.
 
 * Not Tested Scripts Yet
-1. ~=yank.channel.sh=~
+1. +=yank.channel.sh=+, now tested and works fine, so far.
 * Developer notes
 These notes are intended for those who want to modify the scripts, improve them, or add error handling, ... etc.
 
