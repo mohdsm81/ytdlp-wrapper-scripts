@@ -44,4 +44,4 @@ done
 # Move files to their respective folders
 CHANNEL_FOLDER=$(echo $FILES[0] | awk -F ' - ' '{print $1;}')
 echo "Moving all folders to the channel folder: '$CHANNEL_FOLDER'"
-find . -mindepth 1 -maxdepth 1 -not -name "*.sh" -a -not -name "$CHANNEL_FOLDER" -exec mv -t "$CHANNEL_FOLDER" {} +
+find . -mindepth 1 -maxdepth 1 -not -name "*.sh" -a -not -name "$CHANNEL_FOLDER" -a \( -name "$CHANNEL_FOLDER -*" -o -name "downloaded.txt" \) -exec mv -t "$CHANNEL_FOLDER" {} +
