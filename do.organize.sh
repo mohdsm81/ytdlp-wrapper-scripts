@@ -30,13 +30,12 @@ do
 done
 
 
-
 # Move files to their respective folders
 echo "Moving files to their respective folder (i.e. a folder per playlist)"
 for folder in "${UNIQUE_FOLDERS[@]}";
 do
     if [[ -d "$folder" ]] && [[ "$folder" != "" ]]; then
-        find . -mindepth 1 -maxdepth 1 -name "*- $folder -*.*" -a -not -name "$folder" -exec mv -t "$folder" {} +
+        find . -mindepth 1 -maxdepth 1 -name "*- $folder -*.*"  -exec mv -t "$folder" {} +
     fi
 done
 
@@ -44,4 +43,4 @@ done
 # Move files to their respective folders
 CHANNEL_FOLDER=$(echo $FILES[0] | awk -F ' - ' '{print $1;}')
 echo "Moving all folders to the channel folder: '$CHANNEL_FOLDER'"
-find . -mindepth 1 -maxdepth 1 -not -name "*.sh" -a -not -name "$CHANNEL_FOLDER" -a \( -name "$CHANNEL_FOLDER -*" -o -name "downloaded.txt" \) -exec mv -t "$CHANNEL_FOLDER" {} +
+find . -mindepth 1 -maxdepth 1 -type d -not -name "$CHANNEL_FOLDER" -exec mv -t "$CHANNEL_FOLDER" {} +
