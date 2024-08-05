@@ -35,7 +35,7 @@ eval $CMD "$@" 2>&1 # first try
 # echo "Exit code "$?""
 
 trap '{ echo "Quitting the script, leaving files untouched..." ; exit 1; }' INT
-while [[ $?!=0 ]] && [[ $RETRY -lt $MAX_RETRIES ]];
+while [[ $? -ne 0 ]] && [[ $RETRY -lt $MAX_RETRIES ]];
 do
     # DEBUG line
     # sleep 2
