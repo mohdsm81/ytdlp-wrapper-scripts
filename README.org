@@ -63,6 +63,21 @@ Now, the root folder will contain all downloaded files in a flat structured mann
 4. move all folders with their content, and the downloaded.txt to the created channel folder.
 
 *NOTE:* When trying to update a list, in order to avoid trying to download all downloaded files, you need to use =--download-archive ../downloaded.txt= (i.e. the one residing in the channel's root folder) while invoking the =download-list= script from within each playlist folder. Why? because the downloaded.txt contains all playlists' files that has been downloaded and need to be updated with newly downloaded files.
+* How to use =yank.channel.sh= script
+
+Follow the steps:
+1. Navigate to he channel, then you click on the playlists tab
+2. copy the URL, this is what you will pass to the script as a CLI argument
+3. you navigate to a root folder of your media folders where this channel is to have a folder of its own.
+4. run the script, passing the URL above to it. Once done downloading, the script will call the =do.organize.sh= script to do the remaining steps of re-organizing the channel folder and files.
+5. Once the download finishes, all the necessary folders (corresponding to each playlist) will be created and all files belonging to each playlist will be placed in the corresponding folder.
+6. Next, the script will move all created folders to the channel-named folder, and will leave the =downloaded.txt= file beside the channel's folder. DO NOT move it, it will become relevant in later steps.
+7. Now, suppose everything goes perfectly, good the script did its intended purpose.
+8. Suppose there has been updates to the channel's playlist(s) or the script didn't download all files in the playlists of that channel. Then you do the following:
+   1. Navigate to the root folder where the /channel's folder/ resides along side the =downloaded.txt= file. (soon this will be clear why)
+   2. invoke the same script with the same url. The script will use the =downloaded.txt= file to skip all those downloaded files and download only the one's not marked as completed/downloaded in the text file.
+   3. Once done downloading, it will move the newly downloaded folder content to the appropriate folder residing inside the channel's folder.
+   4. Do this to update the channel's downloaded files
 
 * Not Tested Scripts Yet
 1. +=yank.channel.sh=+, now tested and works fine, so far.

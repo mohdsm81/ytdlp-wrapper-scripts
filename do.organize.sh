@@ -39,8 +39,31 @@ do
     fi
 done
 
-# Move all folders containing the files into the channel folder
-# Move files to their respective folders
 CHANNEL_FOLDER=$(echo $FILES[0] | awk -F ' - ' '{print $1;}')
+
+# before moving the folders, in fear of overwriting a previous one inside the
+# channel folder, check if it exists. Then, move all files beloning to the same
+# folder into the one inside the channel's folder Last, delete the root-level
+# empty folder.
+
+# Move all folders containing the files into the channel folder
 echo "Moving all folders to the channel folder: '$CHANNEL_FOLDER'"
-find . -mindepth 1 -maxdepth 1 -type d -not -name "$CHANNEL_FOLDER" -exec mv -t "$CHANNEL_FOLDER" {} +
+for folder in "${UNIQUE_FOLDERS[@]}";
+do
+    if [[ -d "$folder" && "$folder" -ne "$CHANNEL_FOLDER" ]];
+    then
+        if [[ -d "$CHANNEL_FOLDER/$folder" ]];
+        then
+            # move the local folder's content to the channel's folder
+            mv -t "$CHANNEL_FOLDER/$folder" "$folder"/*
+            # delete local folder
+            rmdir "$folder"
+        else
+            # move the local folder itself inside the channel folder
+            mv -t "$CHANNEL_FOLDER" "$folder"
+        fi
+    fi
+done
+
+# OLD, remove when done
+# find . -mindepth 1 -maxdepth 1 -type d -not -name "$CHANNEL_FOLDER" -exec mv -t "$CHANNEL_FOLDER" {} +
