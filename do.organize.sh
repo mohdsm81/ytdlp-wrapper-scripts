@@ -48,19 +48,19 @@ CHANNEL_FOLDER=$(echo $FILES[0] | awk -F ' - ' '{print $1;}')
 
 # Move all folders containing the files into the channel folder
 echo "Moving all folders to the channel folder: '$CHANNEL_FOLDER'"
+echo "$CHANNEL_FOLDER"
 for folder in "${UNIQUE_FOLDERS[@]}";
 do
-    if [[ -d "$folder" && "$folder" -ne "$CHANNEL_FOLDER" ]];
+    if [[ -d "${folder}" ]] && [[ "$folder" != "$CHANNEL_FOLDER" ]];
     then
         if [[ -d "$CHANNEL_FOLDER/$folder" ]];
         then
-            # move the local folder's content to the channel's folder
-            mv -t "$CHANNEL_FOLDER/$folder" "$folder"/*
+            mv "$folder"/* "$CHANNEL_FOLDER/$folder"
             # delete local folder
             rmdir "$folder"
         else
             # move the local folder itself inside the channel folder
-            mv -t "$CHANNEL_FOLDER" "$folder"
+            mv "$folder" "$CHANNEL_FOLDER"
         fi
     fi
 done
