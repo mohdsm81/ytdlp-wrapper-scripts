@@ -40,6 +40,9 @@ do
 done
 
 CHANNEL_FOLDER=$(echo $FILES[0] | awk -F ' - ' '{print $1;}')
+if [[ ! -d "$CHANNEL_FOLDER" ]]; then
+    mkdir "$CHANNEL_FOLDER"
+fi
 
 # before moving the folders, in fear of overwriting a previous one inside the
 # channel folder, check if it exists. Then, move all files beloning to the same
@@ -48,7 +51,7 @@ CHANNEL_FOLDER=$(echo $FILES[0] | awk -F ' - ' '{print $1;}')
 
 # Move all folders containing the files into the channel folder
 echo "Moving all folders to the channel folder: '$CHANNEL_FOLDER'"
-echo "$CHANNEL_FOLDER"
+
 for folder in "${UNIQUE_FOLDERS[@]}";
 do
     if [[ -d "${folder}" ]] && [[ "$folder" != "$CHANNEL_FOLDER" ]];
