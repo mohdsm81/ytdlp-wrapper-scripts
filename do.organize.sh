@@ -60,9 +60,9 @@ do
             # delete local folder
             rmdir "$folder"
         else
-            echo "Moving folder $folder to $CHANNEL_FOLDER"
+            echo "Moving folder $folder == to ==> $CHANNEL_FOLDER"
             # move the local folder itself inside the channel folder
-            mv "$folder" "$CHANNEL_FOLDER"
+            mv "$folder" "$CHANNEL_FOLDER/"
         fi
     fi
 done
