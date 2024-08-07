@@ -61,8 +61,12 @@ do
             rmdir "$folder"
         else
             echo "Moving folder $folder == to ==> $CHANNEL_FOLDER"
-            # move the local folder itself inside the channel folder
-            mv "$folder" "$CHANNEL_FOLDER"/
+            # create a subfolder inside the channel's
+            mkdir "$CHANNEL_FOLDER/$folder"
+            # move files of the local folder itself inside the channel folder
+            mv "$folder"/* "$CHANNEL_FOLDER/$folder"
+            # remove the local folder
+            rmdir "$folder"
         fi
     fi
 done
