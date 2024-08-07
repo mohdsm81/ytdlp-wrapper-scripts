@@ -53,6 +53,7 @@ for folder in "${UNIQUE_FOLDERS[@]}";
 do
     if [[ -d "${folder}" ]] && [[ "$folder" != "$CHANNEL_FOLDER" ]];
     then
+        echo "$CHANNEL_FOLDER/$folder"
         if [[ -d "$CHANNEL_FOLDER/$folder" ]];
         then
             mv "$folder"/* "$CHANNEL_FOLDER/$folder"
