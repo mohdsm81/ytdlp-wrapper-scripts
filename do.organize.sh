@@ -53,13 +53,14 @@ for folder in "${UNIQUE_FOLDERS[@]}";
 do
     if [[ -d "${folder}" ]] && [[ "$folder" != "$CHANNEL_FOLDER" ]];
     then
-        echo "$CHANNEL_FOLDER/$folder"
         if [[ -d "$CHANNEL_FOLDER/$folder" ]];
         then
+            echo "Moving contents of $folder == to ==> $CHANNEL_FOLDER/$folder"
             mv "$folder"/* "$CHANNEL_FOLDER/$folder"
             # delete local folder
             rmdir "$folder"
         else
+            echo "Moving folder $folder to $CHANNEL_FOLDER"
             # move the local folder itself inside the channel folder
             mv "$folder" "$CHANNEL_FOLDER"
         fi
