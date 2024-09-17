@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# --recode-video mp4
+
 yt-dlp \
 --write-description \
 --download-archive downloaded.txt \
@@ -13,5 +15,5 @@ yt-dlp \
 --add-metadata \
 --embed-thumbnail \
 --write-thumbnail \
---recode-video mp4 -o  "%(channel)s - %(title)s - UPLOADED ON %(upload_date>%Y-%m-%d)s.%(ext)s" \
+-o  "%(channel)s - %(title)s - UPLOADED ON %(upload_date>%Y-%m-%d)s.%(ext)s" \
 "$@"
