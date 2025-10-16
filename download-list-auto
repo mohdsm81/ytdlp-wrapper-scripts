@@ -5,9 +5,9 @@
 #
 #Removed the enocoding to mpg4:
 # --recode-video mp4 \
-# -f bestvideo+bestaudio \
+#
 /usr/bin/yt-dlp \
--f best \
+-f bestvideo+bestaudio \
 -o  "%(channel)s - %(title)s.%(ext)s" "$@" \
 --download-archive downloaded.txt \
 --retries 20 \

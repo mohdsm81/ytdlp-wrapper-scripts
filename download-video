@@ -12,9 +12,9 @@ MAX_RETRIES=5
 # removed the following option:
 # --recode-video mp4
 #
-# -f bestvideo+bestaudio
+#
 CMD='/usr/bin/yt-dlp
--f best
+-f bestvideo+bestaudio
 -o "%(channel)s - %(title)s - UPLOADED ON %(upload_date>%Y-%m-%d)s.%(ext)s" "$@"
 --download-archive downloaded.txt
 --retries 20
