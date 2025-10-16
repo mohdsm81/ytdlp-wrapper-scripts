@@ -12,7 +12,7 @@ MAX_RETRIES=5
 # --recode-video mp4
 
 CMD='/usr/bin/yt-dlp
--f bestvideo+bestaudio
+-f best
 -o  "%(channel)s - %(playlist)s - %(playlist_index)03d - %(title)s.%(ext)s" "$@"
 --download-archive downloaded.txt
 --retries 20
